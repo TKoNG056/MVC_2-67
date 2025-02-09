@@ -28,26 +28,6 @@ public class Suit {
         return null; // ถ้าไม่พบชุด
     }
 
-    // ฟังก์ชันรับ ID แล้วคืนค่า Durability ตาม SuitType
-    public int getSuitDurabilityById(String id) {
-        try (BufferedReader br = new BufferedReader(new FileReader(heroSuitsFile))) {
-            String line;
-            br.readLine(); // ข้ามหัวตาราง
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                String suitId = data[0].trim();
-                String suitType = data[1];
-                int durability = Integer.parseInt(data[2].trim());
-
-                if (suitId .equals(id)) {
-                    return durability;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return -1; // ถ้าไม่พบชุด
-    }
 
     // ฟังก์ชันอัปเดต Durability ของชุดตาม ID และ SuitType
     public void updateSuitDurability(String id, int newDurability) {
