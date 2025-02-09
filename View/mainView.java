@@ -8,11 +8,10 @@ import Controller.*;
 
 public class mainView {
     private suitDetector detector = new suitDetector();
+    private inputValidator inputValidator = new inputValidator();
+
     public void mainWindow() {
-
-        
-        
-
+    
         // สร้าง Frame หรือ Window
         JFrame frame = new JFrame("Suit ID Input");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,9 +28,9 @@ public class mainView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String suitId = suitIdField.getText();
-                if (inputValidator.isSuitHere(suitId)) {
+                if (inputValidator.isSuitHere(suitId) && inputValidator.isSuitHere(suitId)) {
                     JOptionPane.showMessageDialog(frame, "Suit ID is valid!");
-                    if(detector.isSuitValid(suitId)){
+                    if(detector.isSuitValid(suitId) ){
                         new suitView(suitId);
                     } else {
                         JOptionPane.showMessageDialog(frame, "Suit is broken!");
