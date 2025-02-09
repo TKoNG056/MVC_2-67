@@ -12,7 +12,7 @@ public class suitDetector {
         if (durability >= 70) {
             return true;
         } else {
-            System.out.println("ชุดทรงพลังไม่ผ่านความทนทาน (ต้องมากกว่าหรือเท่ากับ 70)");
+            System.out.println("ชุดทรงพลังไต้องมากกว่าหรือเท่ากับ 70");
             return false;
         }
     }
@@ -25,7 +25,7 @@ public class suitDetector {
         if (durability >= 50) {
             return true;
         } else {
-            System.out.println("ชุดลอบเร้นไม่ผ่านความทนทาน (ต้องมากกว่าหรือเท่ากับ 50)");
+            System.out.println("ชุดลอบเร้นต้องมากกว่าหรือเท่ากับ 50");
             return false;
         }
     }
@@ -37,7 +37,7 @@ public class suitDetector {
 
         // ตรวจสอบว่าความทนทานไม่ลงท้ายด้วยเลข 3 หรือ 7
         if (durability % 10 == 3 || durability % 10 == 7) {
-            System.out.println("ชุดปกปิดตัวตนไม่ผ่านความทนทาน (ไม่ควรลงท้ายด้วยเลข 3 หรือ 7)");
+            System.out.println("ชุดปกปิดตัวตนไม่ลงท้ายด้วยเลข 3 หรือ 7");
             return false;
         } else {
             return true;
@@ -49,7 +49,7 @@ public class suitDetector {
         String suitType = new Suit().getSuitTypeById(suitId);
         
         if (suitType == null) {
-            System.out.println("ไม่พบชุดที่มี ID นี้");
+            System.out.println("ไม่พบชุด");
             return false;
         }
 
